@@ -1,0 +1,13 @@
+.wrapper {
+  width: 800px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.alert{
+  color:red;
+}
+
+.sadAlert{
+  color:blue;
+}
