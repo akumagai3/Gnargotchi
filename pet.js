@@ -13,14 +13,14 @@ let energy = 50
 
 
 const timePasses = () =>{
+    
   hunger += 2
   loneliness += 2
   energy -= 2
-  happiness -=1
+  happiness -=2
   updateImage()
   updateLabels()
   warning()
-  
 }
 
 const imposeLimits = () => {
@@ -58,24 +58,22 @@ const updateLabels = () => {
 }
 
 const warning = () =>{
-    if (hunger > 75  || energy < 20){
-    status.classList.add("alert")
-    }
-    else{
+    if (hunger > 70  || energy < 30) {
+        status.classList.add("alert")
+    } else {
         status.classList.remove("alert")
     }
-    if (loneliness > 80 || happiness < 30){{
-    status.classList.toggle("sadAlert")
-    }
+    if (loneliness > 70 || happiness < 30) { 
+        status.classList.toggle("sadAlert")
     }
 }
 
 const updateImage = () => {
-    if (hunger > 75) {
+    if (hunger > 70) {
         imageDiv.innerHTML = `<img src="hungrygnar.png" />` 
-    } else if (loneliness > 80 || happiness < 30) {
+    } else if (loneliness > 70 || happiness < 30) {
         imageDiv.innerHTML = `<img src="madGnar.png"/>` 
-    } else if (energy < 20) {
+    } else if (energy < 30) {
         imageDiv.innerHTML = `<img src="sleepgnar.png"/>` 
     } else {
         imageDiv.innerHTML = `<img src="HappyGnar.png" />`
@@ -86,7 +84,7 @@ const updateImage = () => {
 petButton.addEventListener('click', (e) =>{
   happiness += 1
   loneliness-= 3
-  energy += 2
+  energy += 1
   updateLabels()
 })
 
